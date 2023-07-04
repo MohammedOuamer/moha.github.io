@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message de salutation</title>
+</head>
+<body>
+    <?php
+    // Récupération de la date et de l'heure actuelles sur le serveur
+    $date = date('Y-m-d');
+    $heure = date('H:i:s');
+
+    // Récupération de l'heure pour déterminer le message de salutation
+    $heureActuelle = date('H');
+
+    // Détermination du message de salutation
+    if ($heureActuelle >= 0 && $heureActuelle < 12) {
+        $message = 'Bon matin';
+    } elseif ($heureActuelle >= 12 && $heureActuelle < 18) {
+        $message = 'Bonne après-midi';
+    } else {
+        $message = 'Bonne soirée';
+    }
+
+    // Affichage du message avec la date et l'heure
+    echo 'Nous sommes le ' . $date . ', ' . $heure . '. ' . $message . '!';
+    ?>
+</body>
+</html>
